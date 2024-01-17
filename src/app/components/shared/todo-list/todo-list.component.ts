@@ -35,7 +35,7 @@ export class TodoListComponent {
     this.todos = this.todos.filter(todo => todo !== todoToRenove);
   }
 
-  get doneTaskCount() {
+  doneTaskCount() {
     return this.todos.filter(todo => !todo.isDone).length;
   }
 

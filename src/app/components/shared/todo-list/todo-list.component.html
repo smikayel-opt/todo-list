@@ -9,5 +9,5 @@
   <div *ngFor="let todo of todos">
     <app-todo [toDo]="todo" (removeEvent)="removeTodo($event)" ></app-todo>
   </div>
-  <app-todo-counter [todoCounter]="doneTaskCount"></app-todo-counter>
+  <app-todo-counter [todoCounter]="doneTaskCount()"></app-todo-counter>
 </div>
