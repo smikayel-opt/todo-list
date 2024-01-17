@@ -1,0 +1,12 @@
+.date-container {
+  background-color: white;
+  padding: 15px;
+  width: fit-content;
+  border-radius: 18px;
+  font-weight: 600;
+}
+
+.header-container  {
+  display: flex;
+  justify-content: flex-end;
+}
