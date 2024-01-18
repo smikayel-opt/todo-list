@@ -22,7 +22,7 @@ export class TodoListComponent {
   newToDo: string = ''
 
   addTodo(newToDo: string) {
-    if (!this.newToDo.length) return
+    if (!this.newToDo.length || /^\s*$/.test(this.newToDo)) return
     this.todos.push({
       content: newToDo,
       isDone: false
