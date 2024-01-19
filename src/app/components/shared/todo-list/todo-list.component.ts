@@ -18,11 +18,11 @@ export interface IToDo {
   styleUrl: './todo-list.component.css'
 })
 export class TodoListComponent {
-  todos:IToDo[] = []
-  newToDo:string = ''
+  todos: IToDo[] = []
+  newToDo: string = ''
 
   addTodo(newToDo: string) {
-    if (!this.newToDo.length) return
+    if (!this.newToDo.trim()) return
     this.todos.push({
       content: newToDo,
       isDone: false
@@ -31,12 +31,27 @@ export class TodoListComponent {
     this.newToDo = ''
   }
 
-  removeTodo(todoToRenove: IToDo) {
-    this.todos = this.todos.filter(todo => todo !== todoToRenove);
+  removeTodo(todoToRemove: IToDo) {
+    this.todos = this.todos.filter(todo => todo !== todoToRemove);
   }
 
-  doneTaskCount() {
+  unComplatedCount() {
     return this.todos.filter(todo => !todo.isDone).length;
+  }
+
+  complatedTasks() {
+    return this.todos.filter(todo => todo.isDone).length;
+  }
+
+  removeFinishedTaks() {
+    this.todos = this.todos.filter(todo => !todo.isDone);
+  }
+
+  markAllDone() {
+    this.todos = this.todos.map(todo => {
+      todo.isDone = true
+      return todo
+    })
   }
 
 }
